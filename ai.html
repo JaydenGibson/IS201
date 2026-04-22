@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chance Game</title>
+
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: #1a4d8f;
+        }
+
+        #rollBtn, #retryBtn {
+            background-color: #1a4d8f;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #rollBtn:hover, #retryBtn:hover {
+            background-color: #163a6b;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        #diceDisplay {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        /* Dice roll animation */
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            20% { transform: translate(-1px, -2px) rotate(-2deg); }
+            40% { transform: translate(-3px, 0px) rotate(2deg); }
+            60% { transform: translate(3px, 2px) rotate(0deg); }
+            80% { transform: translate(1px, -1px) rotate(1deg); }
+            100% { transform: translate(-1px, 2px) rotate(-1deg); }
+        }
+
+        a {
+            display: block;
+            margin-top: 40px;
+            font-size: 18px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Feeling Lucky?</h1>
+
+    <button id="rollBtn">Let's Find Out</button>
+    <button id="retryBtn" style="display:none;">Doesn't seem like you? Try again.</button>
+
+    <div id="diceDisplay"></div>
+    <div id="result"></div>
+
+    <a href="fromscratch.html">Back to Running Page</a>
+
+    <script>
+        const rollBtn = document.getElementById("rollBtn");
+        const retryBtn = document.getElementById("retryBtn");
+        const diceDisplay = document.getElementById("diceDisplay");
+        const result = document.getElementById("result");
+
+        function rollDice() {
+            // Add shake animation
+            diceDisplay.classList.add("shake");
+
+            // Remove animation after it finishes
+            setTimeout(() => {
+                diceDisplay.classList.remove("shake");
+
+                // Roll two 6-sided dice
+                let die1 = Math.floor(Math.random() * 6) + 1;
+                let die2 = Math.floor(Math.random() * 6) + 1;
+                let total = die1 + die2;
+
+                // Display dice results
+                diceDisplay.innerHTML =
+                    "You rolled: " + die1 + " + " + die2 + " = " + total;
+
+                // Determine outcome
+                if (total === 7) {
+                    result.innerHTML =
+                        "🎉 It's your lucky day!! Today's the day to take your chance...";
+                    retryBtn.style.display = "none"; // hide retry button
+                    rollBtn.style.display = "none";          // hide main button on losing roll
+                    rollBtn.style.display = "inline-block";  // show main button on winning roll
+
+                } else {
+                    result.innerHTML =
+                        "Maybe you aren't as lucky as you thought you were...";
+                    retryBtn.style.display = "inline-block"; // show retry button
+                    rollBtn.style.display = "none";          // hide main button on losing roll
+                }
+            }, 500); // matches animation duration
+        }
+
+        rollBtn.addEventListener("click", rollDice);
+        retryBtn.addEventListener("click", rollDice);
+    </script>
+
+</body>
+</html>

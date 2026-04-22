@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Page</title>
+
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="css/stylingscratch.css">
+</head>
+ <!-- Navigation back to main page -->
+        <a href="index.html" class="nav-link">To the Professional Page</a>
+<body>
+
+    <div id="header-section">
+        <h1 id="top">All About Running</h1>
+
+       
+
+        <p>Welcome to my running page! Here is a bit of the sport I love:</p>
+    </div>
+
+    <div id="reasons-section">
+        <h2>Why I Like Running</h2>
+
+        <ol>
+            <li>Health Benefits
+                <ul>
+                    <li>I feel better physically</li>
+                    <li>I feel better mentally</li>
+                    <li>I can spend time in nature</li>
+                </ul>
+            </li>
+            <br><br>
+            <li>Favorite Running Events
+                <ul>
+                    <li>800M</li>
+                    <li>1600M</li>
+                    <li>5K</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div id="media-section">
+        <h2>Running Photo</h2>
+
+        <img src="assets/img/LacingupNikes.jpg" alt="Running Image" width="300">
+
+        <h2>Running Video</h2>
+
+        <!-- Video + Back to Top aligned in one row -->
+        <div class="video-row">
+            <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/SObBTy5HEqA?si=Bdt4aOQ7kAbwggBx"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+            <a href="#top">Back to Top</a>
+        </div>
+
+        <!-- Tableau embed placed BELOW the video row -->
+        <div class='tableauPlaceholder' id='viz1776882939660' style='position: relative'>
+            <noscript>
+                <a href='#'>
+                    <img alt=' ' src='https://public.tableau.com/static/images/Re/RegionalSampleWorkbook/Obesity/1_rss.png' style='border: none' />
+                </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='RegionalSampleWorkbook/Obesity' />
+                <param name='tabs' value='yes' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/Re/RegionalSampleWorkbook/Obesity/1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+            </object>
+        </div>
+
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1776882939660');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width='800px';
+            vizElement.style.height='650px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+
+    </div>
+    <a href="ai.html" class="nav-link">Play the Chance Game</a>
+
+
+</body>
+</html>

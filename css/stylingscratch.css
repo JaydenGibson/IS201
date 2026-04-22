@@ -1,0 +1,47 @@
+/* Page background and default font */
+body {
+    background-color: silver;
+    font-family: Arial, sans-serif;
+    color: #333333;
+    margin: 20px;
+}
+
+/* Header section */
+#header-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Reasons section */
+#reasons-section {
+    background-color: #e8e8e8;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Media section */
+#media-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Headings */
+h1, h2 {
+    color: #1a4d8f;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Links */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
